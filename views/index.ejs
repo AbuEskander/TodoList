@@ -1,1 +1,20 @@
 <%- include("partials/header.ejs") %>
+
+<body>
+ <% if(!(locals.Todo))  {%>
+    <h1>Start Typing Something To do!</h1>
+<% } else { %>
+    <ul>
+    <% Todo.forEach((element)=> {%>
+        <li><%=element %></li>
+    
+<% })}%>
+</ul>
+<form action="submit" method="post">
+    <input type="text" name="Todo" placeholder="Type Here!" >
+    <input type="submit" value="Add" autocomplete="off" >
+</form>
+
+
+
+</body>
