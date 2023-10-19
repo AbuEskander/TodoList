@@ -1,46 +1,42 @@
 <%- include("partials/header.ejs") %>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">Todo List ✅</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">Work List</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <button class="nav-link active" href="#">All List</button>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     <!-- Todo List Section-->
-    <div class="container-fluid  p-5 justify-content-center gradient-Background">
-        <div class="container">
+    <div class="container-fluid  p-5 justify-content-center gradient-Background "  >
+        <div class="container pb-3">
  <% if(!(locals.Todo))  {%>
     <h1>Start Typing Something To do!</h1>
 <% } else { %>
-    <ul>
+    <ul class="list-group">
     <% Todo.forEach((element)=> {%>
-        <li ><%=element %></li>
+        <li class="list-group-item col-9 col-6 col-3"><input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+          <label class="form-check-label" for="firstCheckbox"><%=element %></label></li>
+        
     
 <% })}%>
 </ul>
 </div>
 <form action="submit" method="post">
-    <input type="text" name="Todo" placeholder="Type Here!" autocomplete="off" autofocus >
-    <input type="submit" value="Add"  class="btn btn-outline-dark" >
+    <input type="text" name="Todo" placeholder="Type Here!" autocomplete="off" autofocus data-bs-theme="dark" class="inputText form-control">
+    <input type="submit" value="Add"  class="btn btn-outline-dark  mt-3 mr-3" >
 </form>
 </div>
 <%- include("partials/footer.ejs") %>
