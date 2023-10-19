@@ -1,20 +1,48 @@
 <%- include("partials/header.ejs") %>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- Todo List Section-->
+    <div class="container-fluid  p-5 justify-content-center gradient-Background">
+        <div class="container">
  <% if(!(locals.Todo))  {%>
     <h1>Start Typing Something To do!</h1>
 <% } else { %>
     <ul>
     <% Todo.forEach((element)=> {%>
-        <li><%=element %></li>
+        <li ><%=element %></li>
     
 <% })}%>
 </ul>
+</div>
 <form action="submit" method="post">
-    <input type="text" name="Todo" placeholder="Type Here!" >
-    <input type="submit" value="Add" autocomplete="off" >
+    <input type="text" name="Todo" placeholder="Type Here!" autocomplete="off" autofocus >
+    <input type="submit" value="Add"  class="btn btn-outline-dark" >
 </form>
-
-
+</div>
+<%- include("partials/footer.ejs") %>
 
 </body>
