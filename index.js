@@ -36,6 +36,11 @@ app.post("/submit", (req, res) => {
         }
     }
 
+
+})
+app.post("/delete",(req,res)=>{
+    TodoW.pop("Hey")
+    res.render("index.ejs",{Todo:TodoW})
 })
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);
